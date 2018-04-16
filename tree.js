@@ -29,8 +29,48 @@ class BSTNode {
     return this._parent;
   }
 
+  root() {
+    if (!this.parent) {
+      return this;
+    }
+    return this.parent.root();
+  }
+
+  inOrder() {
+    let nodes = [];
+    if (this.left != null) {
+      let lio = this.left.inOrder();
+      nodes = nodes.concat(lio);
+    }
+    nodes.push(this.value);
+    if (this.right != null) {
+      let rio = this.right.inOrder();
+      nodes = nodes.concat(rio);
+    }
+    return nodes;
+  }
   // an algorithm to  nd the "next" node (i.e., in-order successor) of a given node in a binary search tree. You may assume that each node has a link to its parent.
-  succ() {}
+  succ() {
+    // if (this.left != null && this.right != null) {
+    //   console.log("case 3");
+    // } else if (this.left != null) {
+    //   console.log("case 1");
+    //   return this.parent.value;
+    // } else if (this.right != null) {
+    //   console.log("case 2");
+    // } else {
+    //   console.log("case 4");
+    // }
+    let root = this.root();
+
+    let inOrder = root.inOrder();
+    for (let i = 0; i < inOrder.length; i++) {
+      if (inOrder[i] == this.value && i < inOrder.length - 1) {
+        return inOrder[i+1];
+      }
+    }
+    return null;
+  }
 }
 
 // Check that min <= x < max
