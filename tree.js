@@ -51,16 +51,6 @@ class BSTNode {
   }
   // an algorithm to  nd the "next" node (i.e., in-order successor) of a given node in a binary search tree. You may assume that each node has a link to its parent.
   succ() {
-    // if (this.left != null && this.right != null) {
-    //   console.log("case 3");
-    // } else if (this.left != null) {
-    //   console.log("case 1");
-    //   return this.parent.value;
-    // } else if (this.right != null) {
-    //   console.log("case 2");
-    // } else {
-    //   console.log("case 4");
-    // }
     let root = this.root();
 
     let inOrder = root.inOrder();
