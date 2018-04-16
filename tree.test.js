@@ -1,10 +1,12 @@
 const Tree = require("./tree");
 
-test("create simple graph", () => {
+test("create simple tree", () => {
   let root = new Tree.BSTNode(5);
   expect(root.value).toBe(5);
   expect(root.isBst()).toBe(true);
   root.left = new Tree.BSTNode(8);
+  expect(root.left.parent).toBe(root);
+
   expect(root.isBst()).toBe(false);
   root.left = new Tree.BSTNode(3);
   expect(root.isBst()).toBe(true);

@@ -1,11 +1,32 @@
 class BSTNode {
   constructor(value) {
     this.value = value;
-    this.left = null;
-    this.right = null;
+    this._left = null;
+    this._right = null;
+    this._parent = null;
   }
   isBst() {
     return isBst_impl(this, null, null);
+  }
+  set left(n) {
+    this._left = n;
+    n._parent = this;
+  }
+  get left() {
+    return this._left;
+  }
+  set right(n) {
+    this._right = n;
+    n._parent = this;
+  }
+  get right() {
+    return this._right;
+  }
+  set parent(n) {
+    this._parent = n;
+  }
+  get parent() {
+    return this._parent;
   }
 
   // an algorithm to  nd the "next" node (i.e., in-order successor) of a given node in a binary search tree. You may assume that each node has a link to its parent.
