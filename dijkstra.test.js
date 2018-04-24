@@ -64,7 +64,8 @@ class Graph {
 }
 
 describe("Dijkstra's algorithm", () => {
-  // path costs for graph
+  // Use the example graph from Wikipedia
+  // https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#/media/File:Dijkstra_Animation.gif
   const paths = [
     [0, 7, 9, null, null, 14], //1
     [7, 0, 10, 15, null, null], //2
@@ -86,7 +87,7 @@ describe("Dijkstra's algorithm", () => {
     expect(g.dijkstra(0, 5)).toEqual(11);
   });
   const paths2 = [
-    [0, -1], //1
+    [0, -1],
     [-1, 0]
   ];
 
