@@ -44,7 +44,8 @@ class Graph {
       }
       // Mark node as visited
       currentNode.visited = true;
-      console.log(nodes);
+
+      // Update the smallest tentative distance
       for (let idx in nodes) {
         let currentVertex = this.vertex(currentNode.idx, idx);
         if (currentVertex != null) {
