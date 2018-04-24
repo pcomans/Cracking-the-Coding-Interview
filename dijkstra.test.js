@@ -77,14 +77,14 @@ describe("Dijkstra's algorithm", () => {
 
   let g = new Graph(paths);
   test("Should use a graph backed by an adjacency matrix", () => {
-    expect(g.vertex(2, 3)).toEqual(11);
-    expect(g.vertex(3, 2)).toEqual(11);
-    expect(g.vertex(0, 0)).toEqual(0);
-    expect(g.vertex(0, 4)).toEqual(null);
-    expect(g.vertex(0, 5)).toEqual(14);
+    expect(g.vertex(2, 3)).toBe(11);
+    expect(g.vertex(3, 2)).toBe(11);
+    expect(g.vertex(0, 0)).toBe(0);
+    expect(g.vertex(0, 4)).toBe(null);
+    expect(g.vertex(0, 5)).toBe(14);
   });
   test("Graph should return the shortest route between two nodes", () => {
-    expect(g.dijkstra(0, 5)).toEqual(11);
+    expect(g.dijkstra(0, 5)).toBe(11);
   });
   const paths2 = [
     [0, -1],
@@ -93,6 +93,6 @@ describe("Dijkstra's algorithm", () => {
 
   let g2 = new Graph(paths2);
   test("dijkstra should return -1 if there is no path", () => {
-    expect(g2.dijkstra(0, 1)).toEqual(-1);
+    expect(g2.dijkstra(0, 1)).toBe(-1);
   });
 });
